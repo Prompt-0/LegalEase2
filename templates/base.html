@@ -29,7 +29,7 @@
                         </a>
                         <a href="{% url 'finders:finder_index' %}" class="nav-link"><i class="fas fa-search"></i> Finders</a>
 
-                        <a href="#" class="nav-link"><i class="fas fa-file-alt"></i> Documents</a>
+                        <a href="{% url 'doc_generator:doc_index' %}" class="nav-link"><i class="fas fa-file-alt"></i> Documents</a>
                         <a href="{% url 'legal_tools:tools_index' %}" class="nav-link"><i class="fas fa-gavel"></i> Legal Tools</a>
 
                         {% if user.is_authenticated %}
@@ -52,7 +52,7 @@
             <a href="{% url 'core:home' %}" class="nav-link">Home</a>
             <a href="{% url 'finders:finder_index' %}" class="nav-link">Finders</a>
 
-            <a href="#" class="nav-link">Documents</a>
+            <a href="{% url 'doc_generator:doc_index' %}" class="nav-link"><i class="fas fa-file-alt"></i> Documents</a>
             <a href="#" class="nav-link">Legal Tools</a>
             <hr/>
             {% if user.is_authenticated %}

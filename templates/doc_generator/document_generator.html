@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Document Generator - LegalEase{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Document Generator</h1>
+    <p>Select a template to begin creating your document.</p>
+</div>
+
+<div class="container">
+    <div id="template-selection-container" class="features-grid">
+        </div>
+
+    <div id="generator-ui" class="doc-generator-layout" style="display: none;">
+
+        <div class_ ="doc-form-container card">
+            <div class="card-header">
+                <h3 id="template-title"></h3>
+            </div>
+            <div class="card-body" id="form-content">
+                </div>
+            <div class="card-footer" id="form-footer">
+                </div>
+        </div>
+
+        <div class="doc-preview-container card">
+            <div class="card-header">
+                <h3>Live Preview</h3>
+            </div>
+            <div class="card-body" id="preview-content">
+                </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="{% static 'js/doc_generator.js' %}"></script>
+{% endblock %}

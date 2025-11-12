@@ -9,22 +9,18 @@
 </div>
 
 <div class="container">
-    <div class="card chat-container">
-        <div class="card-body" id="chat-window">
-            <div class="chat-message bot">
-                <div class="chat-bubble">Hello! I am LegalEase Bot. How can I help you with your legal query today?</div>
-            </div>
-        </div>
-        <div class="card-footer chat-input-area">
-            {% csrf_token %} <input type="text" id="chat-input" class="form-control" placeholder="Ask about 'FIR', 'theft', 'assault'...">
-            <button class="btn btn-primary" id="chat-submit-btn">
-                <i class="fas fa-paper-plane"></i>
-            </button>
-        </div>
+    <!-- FIX: We are using the iframe from the original project -->
+    <!-- This replaces the chat window and input box -->
+    <div class="card" style="height: 70vh; padding: 0; overflow: hidden;">
+        <iframe
+            src="https://www.chatbase.co/chatbot-iframe/v7J8xuJ2duPY7ScvZ2NvO"
+            width="100%"
+            style="height: 100%; border: none;"
+        ></iframe>
     </div>
 </div>
 {% endblock %}
 
 {% block scripts %}
-<script src="{% static 'js/auth.js' %}"></script> <script src="{% static 'js/legalbot.js' %}"></script>
+<!-- We no longer need legalbot.js or auth.js for this page -->
 {% endblock %}
