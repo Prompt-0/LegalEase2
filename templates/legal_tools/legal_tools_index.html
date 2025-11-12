@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Legal Tools - LegalEase{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Legal Tools</h1>
+    <p>Access our legal bot and searchable law library.</p>
+</div>
+
+<section class="features">
+    <div class="container">
+        <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+            <a href="{% url 'legal_tools:legalbot' %}" class="feature-card">
+                <div class="feature-icon blue"><i class="fas fa-comment-dots"></i></div>
+                <h3>LegalBot</h3>
+                <p>Get instant legal guidance in multiple languages.</p>
+            </a>
+            <a href="{% url 'legal_tools:legal_books' %}" class="feature-card">
+                <div class="feature-icon orange"><i class="fas fa-book"></i></div>
+                <h3>Legal Books</h3>
+                <p>Browse BNS, BNSS, BSA acts and sections.</p>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

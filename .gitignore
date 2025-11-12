@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
+
+# Database
+*.sqlite3
+db.sqlite3
+
+# Secrets
+legalease/.env
+.env
+
+# OS / Editor
+.DS_Store
+.vscode/
+*.swp

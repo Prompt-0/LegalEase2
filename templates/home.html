@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block title %}LegalEase - Home{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <h1>Welcome to LegalEase</h1>
+        <p>Your trusted companion for legal support and guidance.</p>
+        <div class="hero-buttons">
+            <a href="#" class="btn btn-primary">Start with LegalBot</a>
+            <a href="#" class="btn btn-secondary">Generate a Document</a>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="container">
+        <div class="section-header">
+            <h2>Legal Support at Your Fingertips</h2>
+            <p>Access comprehensive legal resources, connect with professionals, and get the help you need.</p>
+        </div>
+
+        <div class="features-grid">
+            <a href="{% url 'legal_tools:legalbot' %}" class="feature-card">
+                <div class="feature-icon blue"><i class="fas fa-comment-dots"></i></div>
+                <h3>LegalBot</h3>
+                <p>Get instant legal guidance in multiple languages.</p>
+            </a>
+            <a href="{% url 'submissions:online_fir' %}" class="feature-card">
+                <div class="feature-icon green"><i class="fas fa-file-alt"></i></div>
+                <h3>File FIR Online</h3>
+                <p>Submit your First Information Report securely.</p>
+            </a>
+
+            <a href="{% url 'finders:station_finder' %}" class="feature-card">
+                <div class="feature-icon red"><i class="fas fa-map-marker-alt"></i></div>
+                <h3>Police Stations</h3>
+                <p>Find nearby police stations and contact details.</p>
+            </a>
+            <a href="{% url 'finders:contact_directory' %}" class="feature-card">
+                <div class="feature-icon purple"><i class="fas fa-phone"></i></div>
+                <h3>Contact Directory</h3>
+                <p>Access important police and institutional contacts.</p>
+            </a>
+            <a href="{% url 'legal_tools:legal_books' %}" class="feature-card">
+                <div class="feature-icon orange"><i class="fas fa-book"></i></div>
+                <h3>Legal Books</h3>
+                <p>Browse BNS, BNSS, BSA acts and sections.</p>
+            </a>
+
+            <a href="{% url 'finders:lawyer_finder' %}" class="feature-card">
+                <div class="feature-icon indigo"><i class="fas fa-scale-balanced"></i></div>
+                <h3>Lawyer Connect</h3>
+                <p>Find and connect with qualified lawyers.</p>
+            </a>
+
+            <a href="{% url 'finders:case_finder' %}" class="feature-card">
+                <div class="feature-icon teal"><i class="fas fa-search"></i></div>
+                <h3>Case Finder</h3>
+                <p>Search for similar legal cases online.</p>
+            </a>
+            <a href="{% url 'submissions:anonymous_report' %}" class="feature-card">
+                <div class="feature-icon gray"><i class="fas fa-shield-alt"></i></div>
+                <h3>Anonymous Report</h3>
+                <p>Submit anonymous reports securely to authorities.</p>
+            </a>
+            <a href="#" class="feature-card"> <div class="feature-icon green"><i class="fas fa-file-signature"></i></div>
+                <h3>Document Generator</h3>
+                <p>Create legal notices and other documents instantly.</p>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

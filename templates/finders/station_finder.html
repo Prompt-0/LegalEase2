@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %} {% block title %}Police Station Finder - LegalEase{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Find a Police Station</h1>
+    <p>Search our directory of police stations.</p>
+</div>
+
+<div class="container">
+    <div class="card" style="margin-bottom: 2rem;">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="station-search">Search by name, district, or pincode</label>
+                <input type="search" id="station-search" placeholder="e.g., '110001' or 'South Delhi'">
+            </div>
+            <button id="search-btn" class="btn btn-primary">
+                <i class="fas fa-search"></i> Search Stations
+            </button>
+        </div>
+    </div>
+
+    <div id="results-container"></div>
+    <p id="loading-indicator" style="display: none; text-align: center;">Loading...</p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/finders.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{% block title %}LegalEase{% endblock %}</title>
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
+
+        <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/components.css' %}" />
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-content">
+                    <a href="{% url 'core:home' %}" class="logo">
+                        <i class="fas fa-scale-balanced"></i>
+                        <span>LegalEase</span>
+                    </a>
+
+                    <div class="desktop-nav">
+                        <a href="{% url 'core:home' %}" class="nav-link">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                        <a href="{% url 'finders:finder_index' %}" class="nav-link"><i class="fas fa-search"></i> Finders</a>
+
+                        <a href="#" class="nav-link"><i class="fas fa-file-alt"></i> Documents</a>
+                        <a href="{% url 'legal_tools:tools_index' %}" class="nav-link"><i class="fas fa-gavel"></i> Legal Tools</a>
+
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'users:accounts' %}" class="nav-link"><i class="fas fa-user"></i> Account</a>
+                            <a href="{% url 'users:logout' %}" class="nav-link btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        {% else %}
+                            <a href="{% url 'users:login' %}" class="nav-link"><i class="fas fa-sign-in-alt"></i> Login</a>
+                            <a href="{% url 'users:signup' %}" class="nav-link btn-signup"><i class="fas fa-user-plus"></i> Signup</a>
+                        {% endif %}
+                    </div>
+
+                    <button class="mobile-menu-btn" id="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="mobile-nav" id="mobile-nav">
+            <a href="{% url 'core:home' %}" class="nav-link">Home</a>
+            <a href="{% url 'finders:finder_index' %}" class="nav-link">Finders</a>
+
+            <a href="#" class="nav-link">Documents</a>
+            <a href="#" class="nav-link">Legal Tools</a>
+            <hr/>
+            {% if user.is_authenticated %}
+                <a href="{% url 'users:accounts' %}" class="nav-link"><i class="fas fa-user"></i> Account</a>
+                <a href="{% url 'users:logout' %}" class="nav-link btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            {% else %}
+                <a href="{% url 'users:login' %}" class="nav-link"><i class="fas fa-sign-in-alt"></i> Login</a>
+                <a href="{% url 'users:signup' %}" class="nav-link btn-signup"><i class="fas fa-user-plus"></i> Signup</a>
+            {% endif %}
+        </div>
+
+        <main class="main-content">{% block content %} {% endblock %}</main>
+
+        <footer class="footer">
+            <div class="container">
+                <p style="margin-bottom: 0.5rem;">
+                    <a href="{% url 'submissions:contact' %}" style="color: white; text-decoration: underline;">Contact Us</a>
+                </p>
+                <p>&copy; 2025 LegalEase. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="{% static 'js/main.js' %}"></script>
+
+        {% block scripts %} {% endblock %}
+    </body>
+</html>

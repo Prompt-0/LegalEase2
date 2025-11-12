@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Legal Books - LegalEase{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Legal Books</h1>
+    <p>Browse and search through key legal acts.</p>
+</div>
+
+<div class="container">
+    <div class="card" style="margin-bottom: 2rem;">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="book-search">Search all acts, chapters, and sections</label>
+                <input type="search" id="book-search" class="form-control" placeholder="e.g., 'Theft' or 'Section 101'">
+            </div>
+        </div>
+    </div>
+
+    <div id="loading-indicator" style="text-align: center;">
+        <p>Loading legal acts...</p>
+    </div>
+
+    <div id="acts-container" class="accordion-container"></div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/legal_books.js' %}"></script>
+{% endblock %}

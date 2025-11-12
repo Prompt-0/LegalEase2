@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %} {% block title %}Lawyer Finder - LegalEase{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Find a Lawyer</h1>
+    <p>Search our directory of qualified legal professionals.</p>
+</div>
+
+<div class="container">
+    <div class="card" style="margin-bottom: 2rem;">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="lawyer-search">Search by name, specialization, or location</label>
+                <input type="search" id="lawyer-search" placeholder="e.g., 'Criminal Law' or 'Adv. Sharma'">
+            </div>
+            <button id="search-btn" class="btn btn-primary">
+                <i class="fas fa-search"></i> Search Lawyers
+            </button>
+        </div>
+    </div>
+
+    <div id="results-container"></div>
+    <p id="loading-indicator" style="display: none; text-align: center;">Loading...</p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/finders.js' %}"></script>
+{% endblock %}

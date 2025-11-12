@@ -1,0 +1,332 @@
+/* --- Global & Typography --- */
+:root {
+    --primary-color: #1a56db;
+    --primary-hover: #1e429f;
+    --secondary-color: #e5edff;
+    --green: #10b981;
+    --red: #ef4444;
+    --orange: #f97316;
+    --purple: #8b5cf6;
+    --indigo: #4f46e5;
+    --teal: #14b8a6;
+    --gray: #6b7280;
+    --text-color: #111827;
+    --text-muted: #6b7280;
+    --bg-color: #f9fafb;
+    --card-bg: #ffffff;
+    --border-color: #e5e7eb;
+    --shadow-md:
+        0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --radius: 0.375rem;
+    --transition: all 0.2s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+        sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+h1 {
+    font-size: 2.25rem;
+}
+h2 {
+    font-size: 1.75rem;
+}
+h3 {
+    font-size: 1.5rem;
+}
+p {
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- Layout --- */
+.main-content {
+    min-height: 80vh;
+}
+
+.footer {
+    padding: 2rem 0;
+    text-align: center;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+.footer p {
+    color: var(--bg-color);
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* --- Card --- */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+.card-header {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+.card-body {
+    padding: 1.5rem;
+}
+
+/* --- Navbar --- */
+.navbar {
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow-md);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4.5rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    text-decoration: none;
+}
+.logo i {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+.logo:hover {
+    text-decoration: none;
+}
+
+.desktop-nav {
+    display: none; /* Hidden on mobile */
+    align-items: center;
+    gap: 0.5rem;
+}
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.875rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: var(--transition);
+}
+.nav-link i {
+    margin-right: 0.375rem;
+}
+.nav-link:hover {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    text-decoration: none;
+}
+
+/* --- Mobile Nav --- */
+.mobile-menu-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.mobile-nav {
+    display: none; /* Hidden by default */
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    padding: 1rem;
+    position: absolute;
+    top: 4.5rem;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+.mobile-nav .nav-link {
+    display: block;
+    padding: 0.75rem 0.5rem;
+    font-size: 1rem;
+}
+.mobile-nav.show {
+    display: block;
+}
+
+/* --- Homepage Hero --- */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color), #3b82f6);
+    color: white;
+    padding: 4rem 1rem;
+    text-align: center;
+}
+.hero h1 {
+    color: white;
+}
+.hero p {
+    color: white;
+    opacity: 0.9;
+    font-size: 1.25rem;
+}
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* --- Homepage Features --- */
+.features {
+    padding: 3rem 1rem;
+}
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.section-header h2 {
+    font-size: 2rem;
+}
+.section-header p {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+.feature-card {
+    display: block;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-align: center;
+    transition: var(--transition);
+    text-decoration: none;
+}
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    text-decoration: none;
+}
+.feature-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+    color: white;
+}
+.feature-card h3 {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+.feature-card p {
+    font-size: 0.875rem;
+    margin-bottom: 0;
+}
+
+/* Feature Colors */
+.blue {
+    background-color: #2563eb;
+}
+.green {
+    background-color: var(--green);
+}
+.red {
+    background-color: var(--red);
+}
+.purple {
+    background-color: var(--purple);
+}
+.orange {
+    background-color: var(--orange);
+}
+.indigo {
+    background-color: var(--indigo);
+}
+.teal {
+    background-color: var(--teal);
+}
+.gray {
+    background-color: var(--gray);
+}
+
+/* --- Responsive --- */
+@media (min-width: 640px) {
+    .hero-buttons {
+        flex-direction: row;
+    }
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .desktop-nav {
+        display: flex;
+    }
+    .mobile-menu-btn {
+        display: none;
+    }
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

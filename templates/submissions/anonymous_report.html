@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Anonymous Report - LegalEase{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Anonymous Report</h1>
+    <p>Submit a report anonymously. Your identity will be protected.</p>
+</div>
+
+<div class="container">
+    <div class="form-container card">
+        <div class="card-body">
+            <form id="report-form" class="form-grid">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="incident-type">Incident Type</label>
+                    <select id="incident-type" name="incident_type" required>
+                        <option value="">Select a category...</option>
+                        <option value="Corruption">Corruption</option>
+                        <option value="Criminal Activity">Criminal Activity</option>
+                        <option value="Fraud">Fraud</option>
+                        <option value="Cybercrime">Cybercrime</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location of Incident</label>
+                    <input type="text" id="location" name="location" placeholder="e.g., City or neighborhood" required>
+                </div>
+                <div class="form-group full-span">
+                    <label for="description">Description of Incident</label>
+                    <textarea id="description" name="description" rows="6" placeholder="Provide all known details..." required></textarea>
+                </div>
+                <div class="form-group full-span">
+                    <label for="evidence-link">Evidence Link (Optional)</label>
+                    <input type="url" id="evidence-link" name="evidence_link" placeholder="https://imgur.com/...">
+                </div>
+
+                <div class="full-span">
+                    <div id="form-status" style="margin-bottom: 1rem;"></div>
+                    <button type="submit" class="btn btn-primary" id="submit-btn">Submit Anonymously</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/auth.js' %}"></script>
+<script src="{% static 'js/submissions.js' %}"></script>
+{% endblock %}

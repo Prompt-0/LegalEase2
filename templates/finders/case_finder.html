@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %} {% block title %}Case Finder - LegalEase{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Find Legal Cases</h1>
+    <p>Search our database of legal precedents.</p>
+</div>
+
+<div class="container">
+    <div class="card" style="margin-bottom: 2rem;">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="case-search">Search by title, category, or summary keywords</label>
+                <input type="search" id="case-search" placeholder="e.g., 'Property dispute' or 'Consumer complaint'">
+            </div>
+            <button id="search-btn" class="btn btn-primary">
+                <i class="fas fa-search"></i> Search Cases
+            </button>
+        </div>
+    </div>
+
+    <div id="results-container"></div>
+    <p id="loading-indicator" style="display: none; text-align: center;">Loading...</p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/finders.js' %}"></script>
+{% endblock %}

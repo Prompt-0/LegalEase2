@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Contact Directory - LegalEase{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Contact Directory</h1>
+    <p>Search for national and state-level helplines.</p>
+</div>
+
+<div class="container">
+    <div class="card" style="margin-bottom: 2rem;">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="helpline-search">Search by name, category (e.g., "Women"), or description</label>
+                <input type="search" id="helpline-search" placeholder="e.g., 'Childline' or 'Emergency'">
+            </div>
+            <button id="search-btn" class="btn btn-primary">
+                <i class="fas fa-search"></i> Search Helplines
+            </button>
+        </div>
+    </div>
+
+    <div id="results-container"></div>
+    <p id="loading-indicator" style="display: none; text-align: center;">Loading...</p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/finders.js' %}"></script>
+{% endblock %}

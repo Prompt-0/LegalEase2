@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}My Account - LegalEase{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>My Account</h1>
+    <p>Welcome back, <strong>{{ user.username }}</strong>!</p>
+</div>
+
+<div class="container">
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="card" style="max-width: 800px; margin: 0 auto;">
+        <div class="card-header">
+            <h3>My Profile</h3>
+        </div>
+        <div class="card-body">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-grid grid-2">
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" value="{{ user.username }}" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="text" value="{{ user.email }}" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="id_user_type">My Account Type</label>
+                        {{ profile_form.user_type }}
+                    </div>
+                </div>
+
+                {% if user.profile.user_type == 'LAWYER' %}
+                    <hr style="margin: 1.5rem 0;">
+                    <h4>My Lawyer Profile</h4>
+                    <p class="text-muted">This information is visible on the "Lawyer Finder" page.</p>
+
+                    <div class="form-grid grid-2">
+                        <div class="form-group">
+                            <label for="id_specialization">Specialization</label>
+                            {{ profile_form.specialization }}
+                        </div>
+                        <div class="form-group">
+                            <label for="id_location">Location (Court/City)</label>
+                            {{ profile_form.location }}
+                        </div>
+                        <div class="form-group">
+                            <label for="id_experience_years">Years of Experience</label>
+                            {{ profile_form.experience_years }}
+                        </div>
+                        <div class="form-group">
+                            <label for="id_phone_number">Public Phone Number</label>
+                            {{ profile_form.phone_number }}
+                        </div>
+                    </div>
+                {% endif %}
+
+                <button type="submit" class="btn btn-primary" style="margin-top: 1rem;">Save Changes</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

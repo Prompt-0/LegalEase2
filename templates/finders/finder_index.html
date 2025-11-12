@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Finders - LegalEase{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Finders</h1>
+    <p>Find lawyers, police stations, and legal cases.</p>
+</div>
+
+<section class="features">
+    <div class="container">
+        <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+            <a href="{% url 'finders:lawyer_finder' %}" class="feature-card">
+                <div class="feature-icon indigo"><i class="fas fa-scale-balanced"></i></div>
+                <h3>Lawyer Connect</h3>
+                <p>Find and connect with qualified lawyers.</p>
+            </a>
+            <a href="{% url 'finders:station_finder' %}" class="feature-card">
+                <div class="feature-icon red"><i class="fas fa-map-marker-alt"></i></div>
+                <h3>Police Stations</h3>
+                <p>Find nearby police stations and contact details.</p>
+            </a>
+            <a href="{% url 'finders:case_finder' %}" class="feature-card">
+                <div class="feature-icon teal"><i class="fas fa-search"></i></div>
+                <h3>Case Finder</h3>
+                <p>Search for similar legal cases online.</p>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
