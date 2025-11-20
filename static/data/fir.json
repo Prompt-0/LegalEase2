@@ -1,0 +1,110 @@
+[
+  {
+    "state": "Andhra Pradesh",
+    "url": "https://psc.ap.gov.in/UI/Home"
+  },
+  {
+    "state": "Arunachal Pradesh",
+    "url": "https://vsc.arunpol.gov.in/"
+  },
+  {
+    "state": "Assam",
+    "url": "https://police.assam.gov.in/"
+  },
+  {
+    "state": "Bihar",
+    "url": "https://biharpolice.in/"
+  },
+  {
+    "state": "Chhattisgarh",
+    "url": "https://cgpolice.gov.in/"
+  },
+  {
+    "state": "Goa",
+    "url": "https://citizen.goapolice.gov.in/CCTNSNIC/Citizen/Login.aspx"
+  },
+  {
+    "state": "Gujarat",
+    "url": "https://gujhome.gujarat.gov.in/portal/web"
+  },
+  {
+    "state": "Haryana",
+    "url": "https://haryanapolice.gov.in/TollFreeNo"
+  },
+  {
+    "state": "Himachal Pradesh",
+    "url": "https://citizenportal.hppolice.gov.in/citizen/login.htm"
+  },
+  {
+    "state": "Jharkhand",
+    "url": "https://jhp.s3waas.gov.in/services"
+  },
+  {
+    "state": "Karnataka",
+    "url": "https://ksp.karnataka.gov.in/service/e-fir/en"
+  },
+  {
+    "state": "Madhya Pradesh",
+    "url": "https://www.mppolice.gov.in/en/citizen-services/e-fir"
+  },
+  {
+    "state": "Maharashtra",
+    "url": "https://mhpolice.maharashtra.gov.in/e-complaint"
+  },
+  {
+    "state": "Manipur",
+    "url": "https://www.manipurpolice.gov.in/"
+  },
+  {
+    "state": "Meghalaya",
+    "url": "https://megpolice.gov.in/useful-links"
+  },
+  {
+    "state": "Mizoram",
+    "url": "https://police.mizoram.gov.in/"
+  },
+  {
+    "state": "Nagaland",
+    "url": "https://police.nagaland.gov.in/"
+  },
+  {
+    "state": "Odisha",
+    "url": "https://odishapolice.gov.in/?q=node/2529"
+  },
+  {
+    "state": "Punjab",
+    "url": "https://www.punjabpolice.gov.in/"
+  },
+  {
+    "state": "Rajasthan",
+    "url": "https://www.police.rajasthan.gov.in/"
+  },
+  {
+    "state": "Sikkim",
+    "url": "https://sikkimpolice.nic.in/CCTNS.html"
+  },
+  {
+    "state": "Tamil Nadu",
+    "url": "https://eservices.tnpolice.gov.in/"
+  },
+  {
+    "state": "Telangana",
+    "url": "https://www.tspolice.gov.in/Services/Citizen-Services"
+  },
+  {
+    "state": "Tripura",
+    "url": "https://tripurapolice.gov.in/"
+  },
+  {
+    "state": "Uttar Pradesh",
+    "url": "https://uppolice.gov.in/article/en/-e-fir"
+  },
+  {
+    "state": "Uttarakhand",
+    "url": "https://uttarakhandpolice.uk.gov.in/e-fir"
+  },
+  {
+    "state": "West Bengal",
+    "url": "https://wbpolice.gov.in/wbp/index.php"
+  }
+]

@@ -16,5 +16,6 @@ urlpatterns = [
     # --- API URLs ---
     path('api/lawyers/', views.LawyerListAPI.as_view(), name='api_lawyer_list'),
     path('api/stations/', views.PoliceStationListAPI.as_view(), name='api_station_list'),
-    path('api/cases/', views.LegalCaseListAPI.as_view(), name='api_case_list'),path('api/helplines/', views.HelplineListAPI.as_view(), name='api_helpline_list'), # <-- ADD THIS
+    path('api/cases/', views.LegalCaseListAPI.as_view(), name='api_case_list'),
+    path('api/helplines/', views.HelplineListAPI.as_view(), name='api_helpline_list'), # <-- ADD THIS
 ]

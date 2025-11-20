@@ -27,11 +27,41 @@
                         <a href="{% url 'core:home' %}" class="nav-link">
                             <i class="fas fa-home"></i> Home
                         </a>
-                        <a href="{% url 'finders:finder_index' %}" class="nav-link"><i class="fas fa-search"></i> Finders</a>
 
-                        <a href="{% url 'doc_generator:doc_index' %}" class="nav-link"><i class="fas fa-file-alt"></i> Documents</a>
-                        <a href="{% url 'legal_tools:tools_index' %}" class="nav-link"><i class="fas fa-gavel"></i> Legal Tools</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle">
+                                <i class="fas fa-search"></i> Finders
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="{% url 'finders:lawyer_finder' %}" class="dropdown-item">Lawyer Connect</a>
+                                <a href="{% url 'finders:station_finder' %}" class="dropdown-item">Police Stations</a>
+                                <a href="{% url 'finders:case_finder' %}" class="dropdown-item">Case Finder</a>
+                                <a href="{% url 'finders:contact_directory' %}" class="dropdown-item">Contact Directory</a>
+                            </div>
+                        </div>
 
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle">
+                                <i class="fas fa-file-alt"></i> Submissions
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="{% url 'submissions:online_fir' %}" class="dropdown-item">File FIR Online</a>
+                                <a href="{% url 'submissions:anonymous_report' %}" class="dropdown-item">Anonymous Report</a>
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle">
+                                <i class="fas fa-gavel"></i> Tools
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="{% url 'legal_tools:legalbot' %}" class="dropdown-item">LegalBot</a>
+                                <a href="{% url 'legal_tools:legal_books' %}" class="dropdown-item">Legal Books</a>
+                                <a href="{% url 'doc_generator:doc_index' %}" class="dropdown-item">Document Generator</a>
+                            </div>
+                        </div>
+
+                        <span class="nav-divider"></span>
                         {% if user.is_authenticated %}
                             <a href="{% url 'users:accounts' %}" class="nav-link"><i class="fas fa-user"></i> Account</a>
                             <a href="{% url 'users:logout' %}" class="nav-link btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
@@ -40,7 +70,6 @@
                             <a href="{% url 'users:signup' %}" class="nav-link btn-signup"><i class="fas fa-user-plus"></i> Signup</a>
                         {% endif %}
                     </div>
-
                     <button class="mobile-menu-btn" id="mobile-menu-btn">
                         <i class="fas fa-bars"></i>
                     </button>
@@ -50,10 +79,21 @@
 
         <div class="mobile-nav" id="mobile-nav">
             <a href="{% url 'core:home' %}" class="nav-link">Home</a>
-            <a href="{% url 'finders:finder_index' %}" class="nav-link">Finders</a>
-
-            <a href="{% url 'doc_generator:doc_index' %}" class="nav-link"><i class="fas fa-file-alt"></i> Documents</a>
-            <a href="#" class="nav-link">Legal Tools</a>
+            <hr/>
+            <span class="mobile-nav-header">Finders</span>
+            <a href="{% url 'finders:lawyer_finder' %}" class="nav-link">Lawyer Connect</a>
+            <a href="{% url 'finders:station_finder' %}" class="nav-link">Police Stations</a>
+            <a href="{% url 'finders:case_finder' %}" class="nav-link">Case Finder</a>
+            <a href="{% url 'finders:contact_directory' %}" class="nav-link">Contact Directory</a>
+            <hr/>
+            <span class="mobile-nav-header">Submissions</span>
+            <a href="{% url 'submissions:online_fir' %}" class="nav-link">File FIR Online</a>
+            <a href="{% url 'submissions:anonymous_report' %}" class="nav-link">Anonymous Report</a>
+            <hr/>
+            <span class="mobile-nav-header">Tools</span>
+            <a href="{% url 'legal_tools:legalbot' %}" class="nav-link">LegalBot</a>
+            <a href="{% url 'legal_tools:legal_books' %}" class="nav-link">Legal Books</a>
+            <a href="{% url 'doc_generator:doc_index' %}" class="nav-link">Document Generator</a>
             <hr/>
             {% if user.is_authenticated %}
                 <a href="{% url 'users:accounts' %}" class="nav-link"><i class="fas fa-user"></i> Account</a>
@@ -63,7 +103,6 @@
                 <a href="{% url 'users:signup' %}" class="nav-link btn-signup"><i class="fas fa-user-plus"></i> Signup</a>
             {% endif %}
         </div>
-
         <main class="main-content">{% block content %} {% endblock %}</main>
 
         <footer class="footer">

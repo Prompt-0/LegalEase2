@@ -1,71 +1,41 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Online FIR - LegalEase{% endblock %}
+{% block title %}Online FIR Portals - LegalEase{% endblock %}
 
 {% block content %}
-<div class="page-header">
-    <h1>Online FIR Submission</h1>
-    <p>Submit your First Information Report securely.</p>
-</div>
 
-<div class="container">
-    <div class="form-container card">
+<section class="hero">
+    <div class="container">
+        <h1>Online FIR Portals</h1>
+        <p>Access the official state-wise portals to file an e-FIR.</p>
+    </div>
+</section>
+
+<div class="container" style="padding-top: 2rem;">
+    <div class="card">
         <div class="card-body">
-            {% if user.is_authenticated %}
-            <form id="fir-form" class="form-grid grid-2">
-                {% csrf_token %}
-                <div class="form-group">
-                    <label for="complainant-name">Complainant's Name</label>
-                    <input type="text" id="complainant-name" name="complainant_name" value="{{ user.get_full_name|default:user.username }}" required>
-                </div>
-                <div class="form-group">
-                    <label for="father-name">Father's Name</label>
-                    <input type="text" id="father-name" name="father_name">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" value="{{ user.email }}">
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group full-span">
-                    <label for="address">Full Address</label>
-                    <textarea id="address" name="address" rows="3" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="district">District</label>
-                    <input type="text" id="district" name="district" required>
-                </div>
-                <div class="form-group full-span">
-                    <label for="subject">Subject of Incident</label>
-                    <input type="text" id="subject" name="subject" required>
-                </div>
-                <div class="form-group full-span">
-                    <label for="details">Details of Incident</label>
-                    <textarea id="details" name="details" rows="6" placeholder="Provide date, time, location, persons involved..." required></textarea>
-                </div>
-
-                <div class="full-span">
-                    <div id="form-status" style="margin-bottom: 1rem;"></div>
-                    <button type="submit" class="btn btn-primary" id="submit-btn">Submit FIR</button>
-                </div>
-            </form>
-            {% else %}
-            <div class="alert alert-info" style="text-align: center;">
-                <p style="margin-bottom: 1rem; color: var(--text-color);">You must be logged in to file an Online FIR.</p>
-                <a href="{% url 'users:login' %}?next={{ request.path }}" class="btn btn-primary">Login to Continue</a>
-            </div>
-            {% endif %}
+            <h3 style="margin-bottom: 0.5rem;">What is an e-FIR?</h3>
+            <p class="text-muted" style="margin-bottom: 1rem;">
+                An e-FIR is a First Information Report filed electronically through an online portal. Many Indian states now offer this service for certain types of complaints, allowing citizens to report incidents without visiting a police station in person.
+            </p>
+            <h4 style="margin-bottom: 0.5rem;">Important</h4>
+            <ul class="text-muted" style="padding-left: 1.5rem;">
+                <li>These are external links to official government websites.</li>
+                <li>The facility to file an e-FIR may vary by state and the nature of the crime.</li>
+                <li>For emergencies, please dial <strong>100</strong> or <strong>112</strong>.</li>
+            </ul>
         </div>
     </div>
+
+    <div id="loading" style="margin-top: 2rem;">
+        <p>Loading state portals...</p>
+    </div>
+    <div id="fir-grid" class="fir-grid">
+        </div>
+
 </div>
 {% endblock %}
 
 {% block scripts %}
-{% if user.is_authenticated %}
-    <script src="{% static 'js/auth.js' %}"></script>
-    <script src="{% static 'js/submissions.js' %}"></script>
-{% endif %}
+<script src="{% static 'js/fir.js' %}"></script>
 {% endblock %}

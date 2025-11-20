@@ -1,10 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     // --- Config for all our forms ---
     const formsConfig = {
-        'fir-form': {
-            apiEndpoint: '/submit/api/fir/',
-            successMessage: 'Your FIR has been submitted successfully. Your reference ID is: ',
-        },
         'report-form': {
             apiEndpoint: '/submit/api/report/',
             successMessage: 'Your report has been submitted anonymously. Your reference ID is: ',
